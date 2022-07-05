@@ -18,7 +18,7 @@ public enum ProductScreenError: Error {
 
 public protocol ProductGalleryScreen {
     
-    func instantiate(id: String, coverPhoto: String?, urls: [String], owned: Bool, shopOwner: ShopOwner?) -> UIViewController
-    func instantiateFromNotification(linkId: String) -> AnyPublisher<UIViewController, ProductScreenError>
+    func create(id: String, coverPhoto: String?, urls: [String], owned: Bool, shopOwner: ShopOwner?) -> UIViewController
+    func createFromNotification(linkId: String) -> AnyPublisher<UIViewController, ProductScreenError>
     
 }
