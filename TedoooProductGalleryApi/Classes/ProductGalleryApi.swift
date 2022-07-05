@@ -12,9 +12,13 @@ public struct ShopOwner {
     public let avatar: String
 }
 
+public enum ProductScreenError: Error {
+    case invalidLink
+}
+
 public protocol ProductGalleryScreen {
     
     func instantiate(id: String, coverPhoto: String?, urls: [String], owned: Bool, shopOwner: ShopOwner?) -> UIViewController
-    func instantiateFromNotification(linkId: String, navController: UINavigationController)
+    func instantiateFromNotification(linkId: String) -> AnyPublisher<UIViewController, ProductScreenError>
     
 }
