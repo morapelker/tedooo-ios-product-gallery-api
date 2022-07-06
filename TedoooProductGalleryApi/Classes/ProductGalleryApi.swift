@@ -31,6 +31,6 @@ public struct ProductChangeUpdate {
 public protocol ProductGalleryScreen {
     
     func create(id: String, coverPhoto: String?, urls: [String], owned: Bool, shopOwner: ShopOwner?, imagesChanged: PassthroughSubject<ProductChangeUpdate, Never>?) -> UIViewController
-    func createFromNotification(in vc: UIViewController, linkId: String) -> AnyPublisher<Any?, ProductScreenError>
+    func createFromNotification(in vc: UINavigationController, linkId: String) -> AnyPublisher<Any?, ProductScreenError>
     
 }
