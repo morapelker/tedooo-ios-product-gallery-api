@@ -17,8 +17,15 @@ public enum ProductScreenError: Error {
 }
 
 public struct ProductChangeUpdate {
-    let coverPhoto: String?
-    let imageUrls: [String]
+    
+    public let coverPhoto: String?
+    public let imageUrls: [String]
+    
+    public init(coverPhoto: String?, imageUrls: [String]) {
+        self.coverPhoto = coverPhoto
+        self.imageUrls = imageUrls
+    }
+    
 }
 
 public protocol ProductGalleryScreen {
