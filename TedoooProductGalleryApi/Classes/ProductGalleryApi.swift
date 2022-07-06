@@ -16,9 +16,14 @@ public enum ProductScreenError: Error {
     case invalidLink
 }
 
+public struct ProductChangeUpdate {
+    let coverPhoto: String?
+    let imageUrls: [String]
+}
+
 public protocol ProductGalleryScreen {
     
-    func create(id: String, coverPhoto: String?, urls: [String], owned: Bool, shopOwner: ShopOwner?) -> UIViewController
+    func create(id: String, coverPhoto: String?, urls: [String], owned: Bool, shopOwner: ShopOwner?, imagesChanged: PassthroughSubject<ProductChangeUpdate, Never>?) -> UIViewController
     func createFromNotification(linkId: String) -> AnyPublisher<UIViewController, ProductScreenError>
     
 }
